@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "//ugonna-onyejekwe.github.io/moviehub/static/css/main.29a87b7c.css",
+    "main.js": "//ugonna-onyejekwe.github.io/moviehub/static/js/main.7bfacc5d.js",
+    "static/media/bg1.jpg": "//ugonna-onyejekwe.github.io/moviehub/static/media/bg1.ed3971d9e240fa561ad7.jpg",
+    "static/media/app2.png": "//ugonna-onyejekwe.github.io/moviehub/static/media/app2.b257531de78f9e4df45f.png",
+    "static/media/app1.png": "//ugonna-onyejekwe.github.io/moviehub/static/media/app1.e079f7049737e8f0ea03.png",
+    "index.html": "//ugonna-onyejekwe.github.io/moviehub/index.html",
+    "main.29a87b7c.css.map": "//ugonna-onyejekwe.github.io/moviehub/static/css/main.29a87b7c.css.map",
+    "main.7bfacc5d.js.map": "//ugonna-onyejekwe.github.io/moviehub/static/js/main.7bfacc5d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29a87b7c.css",
+    "static/js/main.7bfacc5d.js"
+  ]
+}
