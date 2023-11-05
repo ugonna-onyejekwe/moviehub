@@ -1,0 +1,277 @@
+@use "../../variable.scss" as *;
+
+nav {
+  background: $Bg;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 20px 0;
+  z-index: 99;
+
+  .backdrop {
+    display: none;
+  }
+
+  .nav_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    .menu_btn {
+      display: none;
+      cursor: pointer;
+    }
+
+    .nav_container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      .search_con {
+        display: flex;
+        align-items: center;
+        background: $Text2;
+        border-radius: 5px;
+        flex: 1;
+        margin: 0 30px;
+
+        .close {
+          display: none;
+        }
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: $Text1;
+          padding: 12px 15px;
+          border-radius: 5px 0 0 5px;
+          cursor: pointer;
+
+          .icon {
+            color: $Bg;
+            font-size: 20px;
+          }
+        }
+        input {
+          padding: 10px 15px;
+          flex: 1;
+          font-size: 15px;
+          color: $Bg;
+          background: transparent;
+
+          &::placeholder {
+            text-transform: capitalize;
+            color: grey;
+          }
+        }
+      }
+
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        .close_icon {
+          display: none;
+          cursor: pointer;
+        }
+
+        a {
+          text-transform: uppercase;
+          font: 15px;
+          color: $Text2;
+          transition: 0.4s ease;
+          font-weight: 600;
+          font-size: 13px;
+
+          button {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 25px;
+          }
+          &:last-child {
+            position: relative;
+
+            span {
+              position: absolute;
+              top: -5px;
+              right: -5px;
+              background: $Text1;
+              color: white;
+              font-size: 15px;
+              height: 18px;
+              width: 18px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            &:hover {
+              color: $Text1;
+
+              span {
+                color: $Text1;
+                background: white;
+              }
+            }
+          }
+
+          &:hover {
+            color: $Text1;
+          }
+          &.active {
+            color: $Text1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  nav {
+    .backdrop {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: black;
+      opacity: 0;
+      z-index: 100;
+      transition: 0.4s ease;
+      pointer-events: none;
+      visibility: hidden;
+
+      &.active {
+        opacity: 0.6;
+        pointer-events: all;
+        visibility: visible;
+      }
+    }
+
+    .nav_wrapper {
+      .menu_btn {
+        display: block;
+        color: $Text2;
+      }
+
+      .nav_container {
+        gap: 20px;
+        .search_con {
+          margin: 0 50px;
+        }
+
+        .links {
+          position: fixed;
+          right: 0;
+          top: 0;
+          height: 100vh;
+          width: 300px;
+          background: $Bg;
+          flex-direction: column;
+          align-items: center;
+          padding: 40px 30px;
+          gap: 0;
+          z-index: 110;
+          transition: 0.4s ease;
+          transform: translateX(110%);
+
+          &.active {
+            transform: translateX(0);
+          }
+
+          .close_icon {
+            width: 100%;
+            display: block;
+            color: $Text2;
+            padding-bottom: 10px;
+          }
+
+          a {
+            width: 100%;
+            border-top: 1px solid rgb(51, 50, 50);
+            padding: 15px 0;
+            text-align: center;
+
+            &:nth-child(1) {
+              border-top: none;
+            }
+          }
+
+          button {
+            border-radius: 5px;
+            background: $Text1;
+            color: $Main_bg;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  nav .nav_wrapper {
+    gap: 15px;
+
+    .nav_container {
+      gap: 15px;
+
+      .search_con {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  nav .nav_wrapper {
+    .nav_container {
+      .search_con {
+        flex: 0;
+        input {
+          display: none;
+        }
+        .search {
+          border-radius: 5px;
+          padding: 10px;
+        }
+      }
+
+      &.searching {
+        flex: 1;
+        .logo {
+          display: none;
+        }
+        .search_con {
+          flex: 1;
+
+          input {
+            display: block;
+            width: 100%;
+          }
+          .search {
+            display: none;
+          }
+          .close {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  nav .nav_wrapper .nav_container .links {
+    width: 100%;
+  }
+}

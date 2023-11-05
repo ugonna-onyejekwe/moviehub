@@ -1,0 +1,322 @@
+@use "../../variable.scss" as *;
+
+.home {
+  height: 100%;
+  min-height: 100vh;
+  margin-top: 130px;
+  padding-bottom: 70px;
+
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title p {
+      text-transform: uppercase;
+      color: $Text1;
+      font-weight: 500;
+      font-size: 13px;
+      padding-bottom: 10px;
+    }
+    .title h2 {
+      text-transform: capitalize;
+      color: $Text2;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  .hero {
+    height: 500px;
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      // border-radius: 10px;
+
+      .box {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        .img {
+          width: 100%;
+          height: 100%;
+        }
+
+        .txt {
+          position: absolute;
+          left: 100px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: $Text2;
+          width: 50%;
+
+          h1 {
+            text-transform: capitalize;
+            padding-bottom: 20px;
+          }
+          .info {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            p {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              text-transform: capitalize;
+
+              .icon {
+                font-size: 20px;
+                color: $Text1;
+              }
+            }
+          }
+          button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+
+            .icon {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .upcoming_movies {
+    margin-top: 100px;
+
+    .wrapper {
+      width: 100%;
+      margin-top: 40px;
+    }
+  }
+
+  .app {
+    margin: 60px auto;
+    padding: 70px 50px;
+    background: $Bg;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .img {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      div {
+        width: 50%;
+        height: 100%;
+      }
+    }
+    .txt {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      color: $Text2;
+
+      div:first-child {
+        flex: 2;
+        h2 {
+          text-transform: capitalize;
+          padding-bottom: 15px;
+          font-size: 25px;
+        }
+        p {
+          color: $Text3;
+        }
+        .box_con {
+          margin-top: 20px;
+          .box {
+            padding: 20px 0;
+            border-bottom: 1px solid rgb(59, 53, 53);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            h3 {
+              font-size: 15px;
+              line-height: 15px;
+              text-transform: capitalize;
+              padding-bottom: 10px;
+            }
+
+            .icon_con {
+              padding: 15px;
+              border: 1px dashed $Text1;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 67px;
+              width: 70px;
+              border-radius: 50%;
+              background: $Main_bg;
+
+              .icon {
+                font-size: 30px;
+              }
+            }
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+      .btn {
+        transform: rotate(90deg);
+        flex: 1;
+        button {
+          padding: 15px 30px;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          background: $Text1;
+          color: $Main_bg;
+          border-radius: 5px;
+          transition: 0.4s ease;
+
+          &:hover {
+            background: $Main_bg;
+            color: $Text2;
+          }
+        }
+      }
+    }
+  }
+
+  .popular_movies {
+    margin-top: 100px;
+    .wrapper {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .home .app {
+    .img {
+      height: 400px;
+      gap: 10px;
+
+      div:first-child {
+        display: none;
+      }
+      div {
+        width: 100%;
+      }
+    }
+    .txt {
+      flex-direction: column;
+
+      div:first-child .box_con .box {
+        gap: 10px;
+        .icon_con {
+          padding: 10px;
+          height: 50px;
+          .icon {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .btn {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .home .hero .wrapper .box .txt {
+    width: 100%;
+  }
+  .home .popular_movies .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .home .app {
+    .img {
+      display: none;
+    }
+    .txt {
+      width: 100%;
+    }
+  }
+  .home .heading {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    .title {
+      text-align: center;
+    }
+  }
+  .home .popular_movies .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .home .hero .wrapper .box .txt {
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translate(0 -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 470px) {
+  .home {
+    margin-top: 80px;
+    .app {
+      padding: 50px 20px;
+    }
+
+    .heading .nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .hero {
+      height: 400px;
+      width: 100%;
+
+      .wrapper .box .txt {
+        padding: 0 15px;
+        text-align: center;
+
+        .info {
+          flex-wrap: wrap;
+          justify-content: center;
+          line-height: 15px;
+        }
+      }
+    }
+    .popular_movies .wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+}

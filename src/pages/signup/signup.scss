@@ -1,0 +1,142 @@
+@use "../../variable.scss" as *;
+
+.form {
+  padding-bottom: 50px;
+  width: 100%;
+  .wrapper {
+    height: 80vh;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    form {
+      width: 500px;
+      padding: 30px;
+      border-radius: 5px;
+      border: 1px solid grey;
+      background: $Bg;
+
+      .logo {
+        justify-content: center;
+        padding-bottom: 20px;
+      }
+
+      .input {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        // display: block;
+
+        &.active {
+          display: none;
+        }
+
+        label {
+          text-transform: capitalize;
+          color: $Text3;
+        }
+
+        input {
+          border: 1px solid grey;
+          background: $Main_bg;
+          padding: 10px;
+          border-radius: 5px;
+          color: $Text2;
+          font-size: 15px;
+        }
+      }
+
+      .btn {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+
+        &.active button:first-child {
+          display: none;
+        }
+
+        &.active button:last-child {
+          display: flex;
+        }
+
+        button:first-child {
+          display: flex;
+        }
+
+        button:last-child {
+          display: none;
+        }
+
+        button {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          justify-content: center;
+          border-radius: 5px;
+          color: $Main_bg;
+          background: $Text1;
+
+          .icon {
+            font-size: 20px;
+          }
+          &:hover {
+            background: $Main_bg;
+            color: $Text2;
+          }
+        }
+      }
+
+      .query {
+        padding-top: 20px;
+        &.active p:first-child {
+          display: none;
+        }
+
+        &.active p:last-child {
+          display: block;
+        }
+
+        p:first-child {
+          display: block;
+        }
+
+        p:last-child {
+          display: none;
+        }
+        p {
+          color: $Text3;
+          text-align: center;
+
+          span {
+            font-weight: 700;
+            color: $Text2;
+            text-transform: capitalize;
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .form .wrapper form h2 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form .wrapper form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .form .wrapper form {
+    padding: 30px 20px;
+  }
+}

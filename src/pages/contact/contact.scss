@@ -1,0 +1,90 @@
+@use "../../variable.scss" as *;
+
+.contact_container {
+  width: 100%;
+  height: fit-content;
+  padding-bottom: 50px;
+
+  .heading {
+    padding: 150px 0 50px 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: black;
+      z-index: -1;
+      opacity: 0.9;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: $Text2;
+      text-align: center;
+      text-transform: capitalize;
+
+      span {
+        color: $Text1;
+        font-size: 40px;
+      }
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .box {
+      background: $Bg;
+      padding: 40px 30px;
+      border-radius: 10px;
+      border: 1px solid grey;
+      text-align: center;
+      flex: 1;
+      color: $Text2;
+      min-width: 300px;
+
+      span {
+        width: 60px;
+        height: 60px;
+        background: $Main_bg;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        .icon {
+          color: $Text1;
+        }
+      }
+      h3 {
+        text-transform: capitalize;
+        padding-top: 10px;
+      }
+      p {
+        padding-top: 15px;
+        color: $Text3;
+
+        a {
+          text-decoration: underline;
+          font-weight: 700;
+          cursor: pointer;
+          color: $Text3;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+@use "../../variable.scss" as *;
+
+.result_not_found {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  color: $Text3;
+  text-align: center;
+}
+
+.movies_section {
+  margin-top: 130px;
+  padding-bottom: 60px;
+
+  .filter_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 20px 40px;
+    background: $Bg;
+    border: 1px solid gray;
+    border-radius: 10px;
+
+    .box {
+      position: relative;
+      flex: 1;
+      border: 1px solid grey;
+      background: $Main_bg;
+      border-radius: 5px;
+      color: $Text3;
+      overflow: hidden;
+
+      select {
+        background: $Main_bg;
+        width: 100%;
+        padding: 10px;
+        text-transform: capitalize;
+        color: $Text3;
+      }
+    }
+  }
+
+  .movies_container {
+    margin-top: 20px;
+
+    h4 {
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: $Text2;
+      font-weight: 500;
+
+      span {
+        color: $Text1;
+        font-size: 20px;
+      }
+    }
+
+    .wrapper {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .movies_section {
+    .filter_container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .movies_container .wrapper {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .movies_section .movies_container .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 425px) {
+  .movies_section .movies_container .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 320px) {
+  .movies_section .filter_container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
