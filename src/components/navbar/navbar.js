@@ -56,7 +56,7 @@ export const Nav_bar = () => {
                 <CloseIcon className="icon " />
               </button>
               <input
-                type="text"
+                type="search"
                 placeholder="search movies by name"
                 onChange={({ target: { value } }) => {
                   setInput(value);
